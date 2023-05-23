@@ -1,6 +1,6 @@
 // import responseMovies from '../mocks/withresulsts.json'
 
-function ListOfMovies({movies} ) {
+function ListOfMovies({ movies } ) {
  
     return (
     <ul className="movies"> 

@@ -5,13 +5,13 @@ import { useSearch } from './hooks/useSearch'
 import { useCallback, useState } from 'react'
 import debounce from 'just-debounce-it'
 
-
 function App() {
 
   const [sort, setSort] = useState(false)
   const {search, updateSearch, error} = useSearch()
   const {movies, loading, getMovies} = useMovies({search, sort}) 
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const debouncedGetMovies = useCallback( 
     debounce(search => { 
         getMovies({search}) 
@@ -31,10 +31,8 @@ function App() {
     debouncedGetMovies(newQuery)
   }
 
-  const handleSort =  () => {
-    setSort(!sort)
-  }
-
+  const handleSort = () => setSort(!sort)
+  
   return (
     <div className='page'>
       <header>
